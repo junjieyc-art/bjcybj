@@ -1,0 +1,829 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gray-950 relative">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {/* 主要背景光晕 */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-cyan-500/6 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-fuchsia-500/4 rounded-full blur-3xl"></div>
+
+        {/* 小几何体装饰 */}
+        <div className="absolute top-20 left-10 w-3 h-3 bg-violet-400/30 rotate-45 animate-pulse"></div>
+        <div
+          className="absolute top-32 right-20 w-2 h-2 bg-cyan-400/40 rounded-full animate-bounce"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
+        <div
+          className="absolute top-1/3 left-1/2 w-4 h-4 bg-fuchsia-400/25 rotate-12 animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-violet-400/35 rounded-full animate-bounce"
+          style={{ animationDelay: "1.5s" }}
+        ></div>
+        <div
+          className="absolute bottom-20 left-1/4 w-2 h-2 bg-cyan-400/30 rotate-45 animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+
+        {/* 更多几何装饰 */}
+        <div className="absolute top-1/2 right-10 w-1 h-8 bg-gradient-to-b from-violet-400 via-fuchsia-400 to-cyan-400 rotate-12"></div>
+        <div className="absolute top-2/3 left-16 w-6 h-1 bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-violet-400 rotate-45"></div>
+        <div
+          className="absolute bottom-1/4 right-1/4 w-5 h-5 border border-fuchsia-400 rotate-45 animate-spin"
+          style={{ animationDuration: "20s" }}
+        ></div>
+      </div>
+
+      <nav className="sticky top-0 z-50 bg-gray-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-gray-950/60 border-b border-gray-800/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <div className="text-2xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent font-serif">
+                创意传媒
+              </div>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <button
+                onClick={() => {
+                  console.log("[v0] 点击核心服务按钮")
+                  try {
+                    window.location.href = "/services"
+                  } catch (error) {
+                    console.error("[v0] 路由跳转错误:", error)
+                  }
+                }}
+                className="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer"
+              >
+                核心服务
+              </button>
+              <button
+                onClick={() => {
+                  console.log("[v0] 点击精选案例按钮")
+                  window.location.href = "/cases"
+                }}
+                className="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer"
+              >
+                精选案例
+              </button>
+              <button
+                onClick={() => {
+                  console.log("[v0] 点击专业团队按钮")
+                  window.location.href = "/team"
+                }}
+                className="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer"
+              >
+                专业团队
+              </button>
+              <button
+                onClick={() => {
+                  console.log("[v0] 点击关于我们按钮")
+                  window.location.href = "/about"
+                }}
+                className="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer"
+              >
+                关于我们
+              </button>
+              <button
+                onClick={() => {
+                  console.log("[v0] 点击联系我们按钮")
+                  window.location.href = "/contact"
+                }}
+                className="text-gray-200 hover:text-white transition-colors bg-transparent border-none cursor-pointer"
+              >
+                联系我们
+              </button>
+            </div>
+            <Button className="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300">
+              免费咨询
+            </Button>
+          </div>
+        </div>
+      </nav>
+
+      <section className="relative bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 py-32 lg:py-48 min-h-[80vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/abstract-geometric-pattern.png')] opacity-5"></div>
+        {/* 更丰富的色彩光晕 */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/3 left-1/2 w-96 h-96 bg-violet-600/12 rounded-full blur-3xl transform -translate-x-1/2"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-fuchsia-600/8 rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <div className="text-sm text-violet-300 mb-4 tracking-wider uppercase">边角创意—品牌全案服务商</div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">
+              <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                创意无界，品牌有力
+              </span>
+            </h1>
+            <p className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+              专业的品牌全案广告传媒公司，致力于为客户提供创意策略、品牌设计、数字营销等全方位服务，助力品牌成长与发展
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Button
+                size="lg"
+                className="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300 px-8 py-4 text-lg"
+                onClick={() => (window.location.href = "/about")}
+              >
+                关于我们
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-violet-400 text-violet-400 hover:bg-violet-400 hover:text-white px-8 py-4 text-lg bg-transparent transition-all duration-300"
+                onClick={() => (window.location.href = "/process")}
+              >
+                合作流程
+              </Button>
+            </div>
+
+            <div className="bg-gray-950/30 backdrop-blur-sm border border-gray-800/30 rounded-2xl p-8 max-w-4xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">200+</div>
+                  <div className="text-sm md:text-base text-gray-300">成功案例</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-violet-400 mb-2">50+</div>
+                  <div className="text-sm md:text-base text-gray-300">合作伙伴</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-fuchsia-400 mb-2">8年</div>
+                  <div className="text-sm md:text-base text-gray-300">行业经验</div>
+                </div>
+                <div>
+                  <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">98%</div>
+                  <div className="text-sm md:text-base text-gray-300">客户满意度</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-16 bg-gray-950/50 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">核心服务</h2>
+            <p className="text-lg text-gray-300">从品牌策略到创意执行，我们提供全链路的专业服务</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* 第一行服务 */}
+            <Card
+              className="group hover:shadow-xl transition-all duration-300 border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer"
+              onClick={() => (window.location.href = "/services/brand-strategy")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage: "url(/placeholder.svg?height=200&width=300&query=brand strategy planning meeting)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-700/60 to-slate-500/30" />
+              <CardContent className="relative p-4 h-full flex flex-col justify-between text-white">
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-16 0 9 9 0 0116 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">品牌策略</h3>
+                  <p className="text-xs opacity-90">深度洞察市场，制定精准的品牌定位</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card
+              className="group hover:shadow-xl transition-all duration-300 border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer"
+              onClick={() => (window.location.href = "/services/visual-design")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage: "url(/placeholder.svg?height=200&width=300&query=creative visual design workspace)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-violet-900/90 via-violet-700/60 to-violet-500/30" />
+              <CardContent className="relative p-4 h-full flex flex-col justify-between text-white">
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">视觉设计</h3>
+                  <p className="text-xs opacity-90">创造独特的视觉识别系统</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card
+              className="group hover:shadow-xl transition-all duration-300 border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer"
+              onClick={() => (window.location.href = "/services/digital-marketing")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage:
+                    "url(/placeholder.svg?height=200&width=300&query=digital marketing analytics dashboard)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/90 via-cyan-700/60 to-cyan-500/30" />
+              <CardContent className="relative p-4 h-full flex flex-col justify-between text-white">
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">数字营销</h3>
+                  <p className="text-xs opacity-90">多渠道整合营销，精准触达</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card
+              className="group hover:shadow-xl transition-all duration-300 border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer"
+              onClick={() => (window.location.href = "/services/event-planning")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage: "url(/placeholder.svg?height=200&width=300&query=event planning creative meeting)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-fuchsia-900/90 via-fuchsia-700/60 to-fuchsia-500/30" />
+              <CardContent className="relative p-4 h-full flex flex-col justify-between text-white">
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">活动策划</h3>
+                  <p className="text-xs opacity-90">创意活动策划执行</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* 第二行服务 */}
+            <Card
+              className="group hover:shadow-xl transition-all duration-300 border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer"
+              onClick={() => (window.location.href = "/services/content-marketing")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage:
+                    "url(/placeholder.svg?height=200&width=300&query=content marketing creation process)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-teal-900/90 via-teal-700/60 to-teal-500/30" />
+              <CardContent className="relative p-4 h-full flex flex-col justify-between text-white">
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">内容营销</h3>
+                  <p className="text-xs opacity-90">优质内容创作</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card
+              className="group hover:shadow-xl transition-all duration-300 border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer"
+              onClick={() => (window.location.href = "/services/social-media")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage: "url(/placeholder.svg?height=200&width=300&query=social media management dashboard)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-rose-900/90 via-rose-700/60 to-rose-500/30" />
+              <CardContent className="relative p-4 h-full flex flex-col justify-between text-white">
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H6z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">社交媒体</h3>
+                  <p className="text-xs opacity-90">全平台社交媒体运营</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card
+              className="group hover:shadow-xl transition-all duration-300 border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer"
+              onClick={() => (window.location.href = "/services/video-production")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage: "url(/placeholder.svg?height=200&width=300&query=video production studio equipment)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/90 via-indigo-700/60 to-indigo-500/30" />
+              <CardContent className="relative p-4 h-full flex flex-col justify-between text-white">
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 002 2H4a2 2 0 00-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">影视制作</h3>
+                  <p className="text-xs opacity-90">专业影视内容制作</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card
+              className="group hover:shadow-xl transition-all duration-300 border-gray-800/50 overflow-hidden relative h-48 bg-gray-900/30 cursor-pointer"
+              onClick={() => (window.location.href = "/services/public-relations")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage: "url(/placeholder.svg?height=200&width=300&query=public relations press conference)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-700/60 to-purple-500/30" />
+              <CardContent className="relative p-4 h-full flex flex-col justify-between text-white">
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fillRule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">公关传播</h3>
+                  <p className="text-xs opacity-90">专业公关策略</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Cases */}
+      <section id="cases" className="py-20 bg-gray-950 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">精选案例</h2>
+            <p className="text-lg text-gray-300">每一个成功案例都是我们专业实力的体现</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 auto-rows-[200px]">
+            {/* 大型案例卡片 - 时尚品牌 */}
+            <Card
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 col-span-2 row-span-2 relative cursor-pointer"
+              onClick={() => (window.location.href = "/cases/fashion-brand")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{ backgroundImage: "url(/fashion-brand-campaign.png)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <CardContent className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <Badge className="mb-3 bg-blue-500/90 text-white hover:bg-blue-600/90 text-sm">时尚品牌</Badge>
+                <h3 className="text-xl font-semibold mb-2">高端时尚品牌全案设计</h3>
+                <p className="text-sm opacity-90 mb-3">为知名时尚品牌打造完整的品牌形象体系，提升品牌价值认知</p>
+                <Button variant="ghost" className="text-white hover:text-white/80 hover:bg-white/10 p-0 text-sm">
+                  查看详情 →
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* 中型案例卡片 - 科技创新 */}
+            <Card
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 col-span-2 row-span-1 relative cursor-pointer"
+              onClick={() => (window.location.href = "/cases/tech-startup")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{ backgroundImage: "url(/tech-startup-branding.png)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <CardContent className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <Badge className="mb-2 bg-purple-500/90 text-white hover:bg-purple-600/90 text-xs">科技创新</Badge>
+                <h3 className="text-base font-semibold">科技创新企业品牌升级</h3>
+              </CardContent>
+            </Card>
+
+            {/* 小型案例卡片 - 餐饮服务 */}
+            <Card
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 col-span-1 row-span-1 relative cursor-pointer"
+              onClick={() => (window.location.href = "/cases/restaurant-brand")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{ backgroundImage: "url(/restaurant-branding.png)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <CardContent className="absolute bottom-0 left-0 right-0 p-3 text-white">
+                <Badge className="mb-1 bg-green-500/90 text-white hover:bg-green-600/90 text-xs">餐饮服务</Badge>
+                <h3 className="text-sm font-semibold">高端餐饮品牌策划</h3>
+              </CardContent>
+            </Card>
+
+            {/* 小型案例卡片 - 教育培训 */}
+            <Card
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 col-span-1 row-span-1 relative cursor-pointer"
+              onClick={() => (window.location.href = "/cases/education-platform")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{ backgroundImage: "url(/education-training-brand.png)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <CardContent className="absolute bottom-0 left-0 right-0 p-3 text-white">
+                <Badge className="mb-1 bg-yellow-500/90 text-white hover:bg-yellow-600/90 text-xs">教育培训</Badge>
+                <h3 className="text-sm font-semibold">在线教育平台设计</h3>
+              </CardContent>
+            </Card>
+
+            {/* 中型案例卡片 - 金融服务 */}
+            <Card
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 col-span-2 row-span-1 relative cursor-pointer"
+              onClick={() => (window.location.href = "/cases/fintech-rebrand")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{ backgroundImage: "url(/financial-services-branding.png)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <CardContent className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <Badge className="mb-2 bg-indigo-500/90 text-white hover:bg-indigo-600/90 text-xs">金融服务</Badge>
+                <h3 className="text-base font-semibold">金融科技品牌重塑</h3>
+              </CardContent>
+            </Card>
+
+            {/* 大型案例卡片 - 电商平台 */}
+            <Card
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 col-span-2 row-span-2 relative cursor-pointer"
+              onClick={() => (window.location.href = "/cases/ecommerce-visual")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{ backgroundImage: "url(/ecommerce-brand-identity.png)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <CardContent className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <Badge className="mb-3 bg-red-500/90 text-white hover:bg-red-600/90 text-sm">电商平台</Badge>
+                <h3 className="text-xl font-semibold mb-2">电商平台品牌视觉系统</h3>
+                <p className="text-sm opacity-90 mb-3">为大型电商平台打造统一的品牌视觉识别系统</p>
+                <Button variant="ghost" className="text-white hover:text-white/80 hover:bg-white/10 p-0 text-sm">
+                  查看详情 →
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* 小型案例卡片 - 医疗健康 */}
+            <Card
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 col-span-1 row-span-1 relative cursor-pointer"
+              onClick={() => (window.location.href = "/cases/healthcare-brand")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{ backgroundImage: "url(/healthcare-brand-design.png)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <CardContent className="absolute bottom-0 left-0 right-0 p-3 text-white">
+                <Badge className="mb-1 bg-teal-500/90 text-white hover:bg-teal-600/90 text-xs">医疗健康</Badge>
+                <h3 className="text-sm font-semibold">医疗品牌形象设计</h3>
+              </CardContent>
+            </Card>
+
+            {/* 小型案例卡片 - 文化娱乐 */}
+            <Card
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 col-span-1 row-span-1 relative cursor-pointer"
+              onClick={() => (window.location.href = "/cases/culture-brand")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{ backgroundImage: "url(/entertainment-culture-brand.png)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <CardContent className="absolute bottom-0 left-0 right-0 p-3 text-white">
+                <Badge className="mb-1 bg-pink-500/90 text-white hover:bg-pink-600/90 text-xs">文化娱乐</Badge>
+                <h3 className="text-sm font-semibold">文化品牌视觉策划</h3>
+              </CardContent>
+            </Card>
+
+            {/* 中型案例卡片 - 汽车行业 */}
+            <Card
+              className="group overflow-hidden hover:shadow-xl transition-all duration-300 col-span-2 row-span-1 relative cursor-pointer"
+              onClick={() => (window.location.href = "/cases/luxury-auto")}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage:
+                    "url(/placeholder.svg?height=400&width=600&query=luxury car brand marketing campaign)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <CardContent className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <Badge className="mb-2 bg-slate-500/90 text-white hover:bg-slate-600/90 text-xs">汽车行业</Badge>
+                <h3 className="text-base font-semibold">豪华汽车品牌营销</h3>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300"
+              onClick={() => (window.location.href = "/cases")}
+            >
+              查看更多案例
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section id="team" className="py-20 bg-gray-950/30 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">专业团队</h2>
+            <p className="text-lg text-gray-300">汇聚行业顶尖人才，用专业和创意为品牌赋能</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="text-center group hover:shadow-lg transition-all duration-300 bg-gray-900/30 border-gray-800/50">
+              <CardContent className="p-8">
+                <div className="w-24 h-24 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <img
+                    src="/professional-male-executive.png"
+                    alt="张明华"
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">张明华</h3>
+                <Badge className="mb-4 bg-cyan-500/20 text-cyan-300 border-cyan-500/30">创意总监</Badge>
+                <p className="text-gray-400">15年品牌策划经验，曾服务过多家知名企业，擅长品牌战略规划和创意执行</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center group hover:shadow-lg transition-all duration-300 bg-gray-900/30 border-gray-800/50">
+              <CardContent className="p-8">
+                <div className="w-24 h-24 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <img
+                    src="/professional-female-designer.png"
+                    alt="李雅静"
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">李雅静</h3>
+                <Badge className="mb-4 bg-violet-500/20 text-violet-300 border-violet-500/30">设计总监</Badge>
+                <p className="text-gray-400">国际4A广告公司出身，在视觉传达和品牌设计领域有着丰富的实战经验</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center group hover:shadow-lg transition-all duration-300 bg-gray-900/30 border-gray-800/50">
+              <CardContent className="p-8">
+                <div className="w-24 h-24 bg-gradient-to-br from-fuchsia-400 to-fuchsia-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <img
+                    src="/professional-male-marketing-director.png"
+                    alt="王志远"
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">王志远</h3>
+                <Badge className="mb-4 bg-fuchsia-500/20 text-fuchsia-300 border-fuchsia-500/30">营销总监</Badge>
+                <p className="text-gray-400">数字营销专家，精通全媒体整合营销，曾操盘多个千万级营销项目</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-white bg-transparent transition-all duration-300"
+              onClick={() => (window.location.href = "/team")}
+            >
+              了解更多团队
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        id="contact"
+        className="bg-gray-950 text-gray-300 py-20 border-t border-gray-800/50 relative overflow-hidden"
+      >
+        {/* 背景装饰效果 */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* 联系表单区域 */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            {/* 左侧联系信息保持不变 */}
+            <div>
+              <div className="inline-block px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm mb-6 border border-cyan-500/30">
+                Contact
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                与我们一起创造
+                <br />
+                <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                  卓越品牌体验
+                </span>
+              </h2>
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                让我们深入了解您的品牌需求，为您量身定制专业的创意解决方案，共同打造令人印象深刻的品牌故事。
+              </p>
+            </div>
+
+            <div className="flex flex-row items-center justify-center space-x-8">
+              <div className="text-center">
+                <div className="w-32 h-32 bg-white rounded-2xl p-3 mb-4 mx-auto shadow-lg">
+                  <img src="/wechat-business-qr.png" alt="微信二维码" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="text-base font-semibold text-white mb-2">微信咨询</h3>
+                <p className="text-gray-400 text-xs">扫码添加微信，获取专业咨询</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-32 h-32 bg-white rounded-2xl p-3 mb-4 mx-auto shadow-lg">
+                  <img src="/placeholder-0wjxd.png" alt="企业微信二维码" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="text-base font-semibold text-white mb-2">企业微信</h3>
+                <p className="text-gray-400 text-xs">扫码联系企业微信，快速响应</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 分隔线 */}
+          <div className="border-t border-gray-800/50 mb-12"></div>
+
+          {/* 底部链接区域 */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            {/* 服务项目 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-white">服务项目</h3>
+              <ul className="space-y-3 text-gray-400">
+                <li>
+                  <a href="/services/brand-strategy" className="hover:text-white transition-colors">
+                    品牌策略
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/visual-design" className="hover:text-white transition-colors">
+                    视觉设计
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/digital-marketing" className="hover:text-white transition-colors">
+                    数字营销
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/event-planning" className="hover:text-white transition-colors">
+                    活动策划
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/content-marketing" className="hover:text-white transition-colors">
+                    内容营销
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* 解决方案 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-white">解决方案</h3>
+              <ul className="space-y-3 text-gray-400">
+                <li>
+                  <a href="/solutions/brand-rebranding" className="hover:text-white transition-colors">
+                    品牌重塑
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/digital-transformation" className="hover:text-white transition-colors">
+                    数字化转型
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/marketing-automation" className="hover:text-white transition-colors">
+                    营销自动化
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/user-experience" className="hover:text-white transition-colors">
+                    用户体验优化
+                  </a>
+                </li>
+                <li>
+                  <a href="/solutions/data-analytics" className="hover:text-white transition-colors">
+                    数据分析
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* 公司信息 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-white">公司信息</h3>
+              <ul className="space-y-3 text-gray-400">
+                <li>
+                  <a href="/about" className="hover:text-white transition-colors">
+                    关于我们
+                  </a>
+                </li>
+                <li>
+                  <a href="/team" className="hover:text-white transition-colors">
+                    团队介绍
+                  </a>
+                </li>
+                <li>
+                  <a href="/partners" className="hover:text-white transition-colors">
+                    合作伙伴
+                  </a>
+                </li>
+                <li>
+                  <a href="/privacy" className="hover:text-white transition-colors">
+                    隐私政策
+                  </a>
+                </li>
+                <li>
+                  <a href="/terms" className="hover:text-white transition-colors">
+                    服务条款
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* 联系方式 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-white">联系方式</h3>
+              <div className="space-y-4 text-gray-400">
+                <p className="leading-relaxed">我们期待与您合作，共同创造令人惊艳的品牌体验。</p>
+                <div className="space-y-2">
+                  <p>📞 400-888-9999</p>
+                  <p>✉️ info@company.com</p>
+                  <p>📍 北京市朝阳区创意园区</p>
+                </div>
+                <div className="flex space-x-3 pt-4">
+                  <div className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-colors cursor-pointer border border-gray-700/50">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </div>
+                  <div className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-colors cursor-pointer border border-gray-700/50">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </div>
+                  <div className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-colors cursor-pointer border border-gray-700/50">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 底部版权信息 */}
+          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800/50">
+            <div className="flex items-center mb-4 md:mb-0">
+              <div className="text-2xl font-bold font-serif bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                创意传媒
+              </div>
+            </div>
+            <div className="text-gray-500 text-sm">Copyright © 2024 创意传媒, All rights reserved.</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
